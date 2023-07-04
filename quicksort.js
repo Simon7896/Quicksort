@@ -8,7 +8,30 @@ function quicksort(list, start, end) {
 }
 
 function partition(list, start, end) {
-    
+    var pivot = list[end]
+
+    var i = start-1
+
+    for (var j=start; j<end; j++) {
+        if (compare(list[j], pivot)) {
+            i++
+            swap(list, i, j)
+        }
+    }
+    i++
+    swap(i, end)
+    return i
+}
+
+function swap(list, i, j) {
+    var temp= list[i]
+    list[i] = list[j]
+    list[j] = temp
+}
+
+function compare(a, b) {
+    const compareVal = a.localeCompare(b)
+    return compareVal < 0
 }
 
 list = [
@@ -21,4 +44,6 @@ list = [
     "Explore Hardware(Emulators Welcome!"
 ]
 
-console.log(quicksort(list))
+console.log(list)
+quicksort(list, 0, 6)
+console.log(list)

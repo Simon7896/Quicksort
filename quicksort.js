@@ -1,4 +1,13 @@
-function quicksort(list) {
+function quicksort(list, start, end) {
+    if (start >= end || start < 0) { return }
+
+    var pivot = partition(list, start, end)
+
+    quicksort(list, start, pivot-1)
+    quicksort(list, pivot+1, end)
+}
+
+function partition(list, start, end) {
     
 }
 

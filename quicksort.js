@@ -19,7 +19,7 @@ function partition(list, start, end) {
         }
     }
     i++
-    swap(i, end)
+    swap(list, i, end)
     return i
 }
 
